@@ -2285,7 +2285,7 @@ select.form-control {
 	border-bottom: 1px solid transparent;
 }
 .navigation-bar-light {
-	background: var(--color-light);
+	background: var(--color-white);
 	border-bottom-color: var(--color-light-d2);
 }
 .navigation-bar-secondary {
