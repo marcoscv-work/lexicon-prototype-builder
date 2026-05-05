@@ -2345,7 +2345,7 @@ select.form-control {
 	align-self: stretch;
 	padding: 0 1rem;
 	margin: var(--spacing-2) var(--spacing-1);
-	color: rgba(0, 0, 0, 0.5);
+	color: var(--color-secondary);
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-normal);
 	text-decoration: none;
@@ -2358,8 +2358,8 @@ select.form-control {
 	transition: color 0.15s ease, background-color 0.15s ease;
 }
 .navigation-bar .nav-link:hover {
-	color: rgba(0, 0, 0, 0.7);
-	background: rgba(0, 0, 0, 0.04);
+	color: var(--color-dark);
+	background: var(--color-light);
 	text-decoration: none;
 }
 .navigation-bar .nav-link:focus-visible {
@@ -2368,7 +2368,7 @@ select.form-control {
 }
 .navigation-bar .nav-link.active,
 .navigation-bar .nav-item.active .nav-link {
-	color: rgba(0, 0, 0, 0.9);
+	color: var(--color-dark);
 	font-weight: var(--font-weight-semi);
 }
 
@@ -2385,7 +2385,15 @@ select.form-control {
 	border-radius: var(--rounded-sm) var(--rounded-sm) 0 0;
 }
 
-/* Secondary variant (dark gray) */
+/* Secondary + Dark variants — explicit dark bg, always white text */
+.navigation-bar-secondary {
+	background: #525361; /* stable — doesn't invert in dark mode */
+	border-bottom-color: #393A4A;
+}
+.navigation-bar-dark {
+	background: #272833; /* stable — doesn't invert in dark mode */
+	border-bottom-color: #393A4A;
+}
 .navigation-bar-secondary .nav-link,
 .navigation-bar-dark .nav-link {
 	color: rgba(255, 255, 255, 0.65);
@@ -2399,13 +2407,13 @@ select.form-control {
 .navigation-bar-secondary .nav-item.active .nav-link,
 .navigation-bar-dark .nav-link.active,
 .navigation-bar-dark .nav-item.active .nav-link {
-	color: var(--color-white);
+	color: #ffffff;
 }
 .navigation-bar-secondary .nav-link.active::after,
 .navigation-bar-secondary .nav-item.active .nav-link::after,
 .navigation-bar-dark .nav-link.active::after,
 .navigation-bar-dark .nav-item.active .nav-link::after {
-	background: var(--color-white);
+	background: #ffffff;
 }
 
 /* Icon inside nav-link */
