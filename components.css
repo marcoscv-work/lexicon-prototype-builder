@@ -2279,29 +2279,31 @@ select.form-control {
      > div.container-fluid > div.navbar-collapse > ul.navbar-nav
        > li.nav-item > a.nav-link
    ============================================================ */
+
+/* Bar container */
 .navigation-bar {
-	border-bottom: 1px solid var(--color-light-d1);
+	border-bottom: 1px solid transparent;
 }
 .navigation-bar-light {
-	background: var(--color-white);
+	background: var(--color-light);
+	border-bottom-color: var(--color-light-d2);
 }
 .navigation-bar-secondary {
-	background: var(--color-light);
+	background: var(--color-secondary);
+	border-bottom-color: transparent;
 }
 .navigation-bar-dark {
 	background: var(--color-dark);
 	border-bottom-color: var(--color-dark-l2);
 }
 
-/* The navbar container is a flex row */
+/* Navbar layout */
 .navigation-bar.navbar {
 	display: flex;
 	align-items: stretch;
-	min-height: 48px;
+	height: 3rem;
 	padding: 0;
 }
-
-/* Fluid container inside the navbar */
 .navigation-bar .container-fluid {
 	display: flex;
 	align-items: stretch;
@@ -2309,59 +2311,45 @@ select.form-control {
 	padding-inline: var(--spacing-5);
 	max-width: 100%;
 }
-
-/* Collapse wrapper — on desktop always visible */
 .navigation-bar .navbar-collapse {
 	display: flex;
 	align-items: stretch;
 	flex: 1;
 }
-
-/* Nav list */
 .navigation-bar .navbar-nav {
 	display: flex;
 	align-items: stretch;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	gap: 0;
 }
-
-/* Each nav item — aligned center, not stretch, so nav-link can have visible border-radius */
 .navigation-bar .nav-item {
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 }
 
-/* Nav link — 2rem tall, centered in 3rem bar via margin, rounded corners */
+/* Nav link — fills full bar height, rounded hover bg, active underline */
 .navigation-bar .nav-link {
 	display: flex;
 	align-items: center;
-	height: 2rem;
-	margin-top: calc((3rem - 1px - 2rem) / 2);
-	margin-bottom: calc((3rem - 1px - 2rem) / 2);
-	padding: 0 var(--spacing-5);
-	color: var(--color-secondary);
-	font-size: var(--font-size-sm);
+	align-self: stretch;
+	padding: 0 1rem;
+	margin: var(--spacing-2) var(--spacing-1);
+	color: rgba(0, 0, 0, 0.5);
+	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-normal);
 	text-decoration: none;
 	white-space: nowrap;
 	border-radius: var(--rounded-md);
-	border-bottom: 2px solid transparent;
-	transition:
-		color 0.15s ease,
-		background-color 0.15s ease,
-		border-color 0.15s ease;
+	position: relative;
 	cursor: pointer;
 	background: none;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	position: relative;
+	border: none;
+	transition: color 0.15s ease, background-color 0.15s ease;
 }
 .navigation-bar .nav-link:hover {
-	color: var(--color-dark);
-	background: var(--color-light);
+	color: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.04);
 	text-decoration: none;
 }
 .navigation-bar .nav-link:focus-visible {
@@ -2370,35 +2358,41 @@ select.form-control {
 }
 .navigation-bar .nav-link.active,
 .navigation-bar .nav-item.active .nav-link {
-	color: var(--color-primary);
+	color: rgba(0, 0, 0, 0.9);
 	font-weight: var(--font-weight-semi);
 }
 
-/* Active underline — absolute positioned so it clears the border-radius */
+/* Active underline — 4px, full width, anchored to bar bottom */
 .navigation-bar .nav-link.active::after,
 .navigation-bar .nav-item.active .nav-link::after {
 	content: '';
-	display: block;
 	position: absolute;
-	bottom: calc(-1 * (3rem - 1px - 2rem) / 2 - 1px);
+	bottom: calc(-1 * var(--spacing-2) - 1px);
 	left: 0;
 	right: 0;
-	height: 2px;
-	background: var(--color-primary);
+	height: 0.25rem;
+	background: var(--color-primary-l0);
+	border-radius: var(--rounded-sm) var(--rounded-sm) 0 0;
 }
 
-/* Dark variant */
+/* Secondary variant (dark gray) */
+.navigation-bar-secondary .nav-link,
 .navigation-bar-dark .nav-link {
 	color: rgba(255, 255, 255, 0.65);
 }
+.navigation-bar-secondary .nav-link:hover,
 .navigation-bar-dark .nav-link:hover {
-	color: var(--color-white);
+	color: rgba(255, 255, 255, 0.9);
 	background: rgba(255, 255, 255, 0.08);
 }
+.navigation-bar-secondary .nav-link.active,
+.navigation-bar-secondary .nav-item.active .nav-link,
 .navigation-bar-dark .nav-link.active,
 .navigation-bar-dark .nav-item.active .nav-link {
 	color: var(--color-white);
 }
+.navigation-bar-secondary .nav-link.active::after,
+.navigation-bar-secondary .nav-item.active .nav-link::after,
 .navigation-bar-dark .nav-link.active::after,
 .navigation-bar-dark .nav-item.active .nav-link::after {
 	background: var(--color-white);
@@ -2406,8 +2400,8 @@ select.form-control {
 
 /* Icon inside nav-link */
 .navigation-bar .nav-link .lexicon-icon {
-	width: 16px;
-	height: 16px;
+	width: 1rem;
+	height: 1rem;
 	margin-right: var(--spacing-2);
 	flex-shrink: 0;
 }
