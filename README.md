@@ -19,6 +19,8 @@ Built for rapid AI-assisted prototyping: paste the CSS files into context, descr
 | `icons.svg` | Full Clay icon sprite (513 symbols, source file) |
 | `icons-sprite.html` | Extracted inline sprite (legacy, use the inline block in components.html) |
 
+[⬇ Download ZIP](https://github.com/marcoscv-work/lexicon-prototype-builder/archive/refs/heads/main.zip)
+
 ---
 
 ## Usage
