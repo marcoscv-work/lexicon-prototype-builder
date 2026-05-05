@@ -15,7 +15,7 @@
       position: fixed; top: 0; left: 0; bottom: 0; width: 220px;
       background: var(--color-white);
       border-right: 1px solid var(--color-light-d1);
-      overflow-y: auto; padding: var(--spacing-5) 0;
+      overflow-y: auto; padding: var(--spacing-5) 0 0;
       z-index: 10;
       display: flex; flex-direction: column;
     }
@@ -3936,44 +3936,56 @@
         <div class="lib-row" style="align-items:flex-start;">
 
           <div>
-            <span class="lib-label">Default (with danger zone)</span>
-            <div style="position:relative; display:inline-block;">
-              <ul class="dropdown-menu" style="position:static; box-shadow:var(--shadow-md);">
-                <li><a class="dropdown-item" href="#">
-                  <svg class="lexicon-icon" aria-hidden="true" style="margin-right:var(--spacing-3);color:var(--color-secondary)"><use href="#pencil"></use></svg>Edit
-                </a></li>
-                <li><a class="dropdown-item" href="#">
-                  <svg class="lexicon-icon" aria-hidden="true" style="margin-right:var(--spacing-3);color:var(--color-secondary)"><use href="#copy"></use></svg>Duplicate
-                </a></li>
-                <li><a class="dropdown-item" href="#">
-                  <svg class="lexicon-icon" aria-hidden="true" style="margin-right:var(--spacing-3);color:var(--color-secondary)"><use href="#move"></use></svg>Move to
-                </a></li>
-                <li class="dropdown-divider"></li>
+            <span class="lib-label">Default (with icons &amp; danger zone)</span>
+            <div style="display:inline-block;">
+              <ul class="dropdown-menu" style="position:static;">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-indicator"><svg class="lexicon-icon" aria-hidden="true"><use href="#pencil"></use></svg></span>
+                    Edit
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-indicator"><svg class="lexicon-icon" aria-hidden="true"><use href="#copy"></use></svg></span>
+                    Duplicate
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-indicator"><svg class="lexicon-icon" aria-hidden="true"><use href="#move"></use></svg></span>
+                    Move to
+                  </a>
+                </li>
+                <li class="dropdown-divider" role="separator"></li>
                 <li><span class="dropdown-header">Danger zone</span></li>
-                <li><a class="dropdown-item danger" href="#">
-                  <svg class="lexicon-icon" aria-hidden="true" style="margin-right:var(--spacing-3)"><use href="#trash"></use></svg>Delete
-                </a></li>
+                <li>
+                  <a class="dropdown-item danger" href="#">
+                    <span class="dropdown-item-indicator"><svg class="lexicon-icon" aria-hidden="true"><use href="#trash"></use></svg></span>
+                    Delete
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div>
-            <span class="lib-label">With header & active state</span>
-            <div style="position:relative; display:inline-block;">
-              <ul class="dropdown-menu" style="position:static; box-shadow:var(--shadow-md);">
+            <span class="lib-label">Active &amp; disabled states</span>
+            <div style="display:inline-block;">
+              <ul class="dropdown-menu" style="position:static;">
                 <li><span class="dropdown-header">Filter by status</span></li>
                 <li><a class="dropdown-item active" href="#">Published</a></li>
                 <li><a class="dropdown-item" href="#">Draft</a></li>
                 <li><a class="dropdown-item" href="#">Pending</a></li>
-                <li><a class="dropdown-item disabled" href="#">Archived</a></li>
+                <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Archived</a></li>
               </ul>
             </div>
           </div>
 
           <div>
             <span class="lib-label">Sections + subheader + caption</span>
-            <div style="position:relative; display:inline-block;">
-              <ul class="dropdown-menu" style="position:static; box-shadow:var(--shadow-md); min-width:220px;">
+            <div style="display:inline-block;">
+              <ul class="dropdown-menu" style="position:static; min-width:220px;">
                 <li class="dropdown-section">
                   <span class="dropdown-subheader">View as</span>
                   <a class="dropdown-item active" href="#">List</a>
@@ -3982,8 +3994,8 @@
                 </li>
                 <li class="dropdown-section">
                   <span class="dropdown-subheader">Sort by</span>
-                  <span class="dropdown-caption">Choose how items are ordered</span>
-                  <a class="dropdown-item active" href="#">Name</a>
+                  <span class="dropdown-caption">Choose how items are ordered in the current view</span>
+                  <a class="dropdown-item" href="#">Name</a>
                   <a class="dropdown-item" href="#">Modified date</a>
                   <a class="dropdown-item" href="#">File size</a>
                 </li>

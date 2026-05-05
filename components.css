@@ -1098,17 +1098,20 @@ select.form-control {
 }
 .dropdown-menu {
 	position: absolute;
-	top: calc(100% + var(--spacing-2));
+	top: 100%;
 	left: 0;
-	min-width: 200px;
+	margin: 0.125rem 0 0;
+	min-width: 10rem;
+	max-width: 260px;
+	max-height: 500px;
+	overflow: auto;
 	background: var(--color-white);
-	border: 1px solid var(--color-light-d1);
-	border-radius: var(--rounded-lg);
-	box-shadow: var(--shadow-lg);
-	padding: var(--spacing-2) 0;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: var(--rounded-md);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+	padding: 0.5rem 0;
 	z-index: var(--z-dropdown);
 	list-style: none;
-	margin: 0;
 }
 .dropdown-menu.dropdown-right {
 	left: auto;
@@ -1117,47 +1120,64 @@ select.form-control {
 .dropdown-item {
 	display: flex;
 	align-items: center;
-	gap: var(--spacing-3);
-	padding: var(--spacing-3) var(--spacing-5);
+	padding: 0.375rem 1.5rem;
 	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-normal);
 	color: var(--color-dark);
 	cursor: pointer;
 	text-decoration: none;
-	transition: var(--transition-fast);
+	white-space: nowrap;
 	border: none;
 	background: none;
 	width: 100%;
 	text-align: left;
+	clear: both;
+	line-height: var(--line-height-base);
 }
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item:focus {
 	background: var(--color-light);
+	color: var(--color-dark);
+	text-decoration: none;
 }
 .dropdown-item.active {
-	background: var(--color-primary-l3);
-	color: var(--color-primary);
+	background: var(--color-primary);
+	color: var(--color-white);
+	text-decoration: none;
+}
+.dropdown-item.active:hover,
+.dropdown-item.active:focus {
+	background: var(--color-primary-d1);
+	color: var(--color-white);
 }
 .dropdown-item.disabled {
-	opacity: 0.4;
+	color: var(--color-secondary);
+	opacity: 1;
 	pointer-events: none;
+	background: none;
 }
 .dropdown-item.danger {
 	color: var(--color-danger);
 }
-.dropdown-item.danger:hover {
+.dropdown-item.danger:hover,
+.dropdown-item.danger:focus {
 	background: var(--color-danger-l2);
+	color: var(--color-danger-d1);
 }
 .dropdown-divider {
-	height: 1px;
-	background: var(--color-light-d1);
-	margin: var(--spacing-2) 0;
+	height: 0;
+	overflow: hidden;
+	border-top: 1px solid var(--color-light);
+	margin: 0.5rem 0;
 }
 .dropdown-header {
-	padding: var(--spacing-3) var(--spacing-5);
+	padding: 0.5rem 1.5rem;
 	font-size: var(--font-size-xs);
 	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
 	color: var(--color-secondary);
+	white-space: nowrap;
 }
 
 /* ============================================================
@@ -3066,17 +3086,19 @@ select.form-control {
    DROPDOWN EXTENDED
    ============================================================ */
 .dropdown-subheader {
-	padding: var(--spacing-3) var(--spacing-5) var(--spacing-1);
+	padding: 0.5rem 1.5rem 0.25rem;
 	font-size: var(--font-size-xs);
 	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
 	color: var(--color-secondary);
+	white-space: nowrap;
 }
 .dropdown-caption {
-	padding: var(--spacing-1) var(--spacing-5) var(--spacing-2);
-	font-size: var(--font-size-xs);
+	padding: 0 1.5rem 0.5rem;
+	font-size: var(--font-size-base);
 	color: var(--color-secondary);
+	white-space: normal;
 }
 .dropdown-section {
 	padding: var(--spacing-2) 0;
@@ -3095,13 +3117,14 @@ select.form-control {
 	min-width: 320px;
 }
 .dropdown-item-indicator {
+	flex-shrink: 0;
+	margin-right: var(--spacing-3);
+	color: var(--color-secondary);
 	display: flex;
 	align-items: center;
 }
-.dropdown-item-indicator .lexicon-icon {
-	margin-right: var(--spacing-3);
-	color: var(--color-secondary);
-	flex-shrink: 0;
+.dropdown-item.active .dropdown-item-indicator {
+	color: var(--color-white);
 }
 
 /* ============================================================
