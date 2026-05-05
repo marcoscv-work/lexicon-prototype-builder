@@ -2059,7 +2059,7 @@
     <a href="#sheets">Sheets</a>
     <a href="#misc">Misc</a>
     <a href="#icons">Icons</a>
-    <a href="https://github.com/marcoscv-work/lexicon-prototype-builder/archive/refs/heads/main.zip" style="margin-top:auto; border-top: 1px solid var(--color-light-d1); padding-top: var(--spacing-5);">
+    <a href="https://github.com/marcoscv-work/lexicon-prototype-builder/archive/refs/heads/main.zip" style="margin-top:auto; border-top: 1px solid var(--color-light-d1); padding: var(--spacing-5);">
       <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true" style="margin-right:var(--spacing-2)"><use href="#download"></use></svg>
       Download kit
     </a>
@@ -3406,7 +3406,7 @@
       <div class="lib-section-body">
 
         <span class="lib-label">Navbar (Dark — Liferay DXP)</span>
-        <div style="margin-bottom: var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom: var(--spacing-6); border-radius:var(--rounded-md);">
           <nav class="navbar">
             <a href="#" class="navbar-brand">
               <svg class="lexicon-icon lexicon-icon-lg" aria-hidden="true" style="margin-right:var(--spacing-2)"><use href="#liferay-ac"></use></svg>
@@ -3426,7 +3426,7 @@
         </div>
 
         <span class="lib-label">Application Bar (Light)</span>
-        <div style="margin-bottom: var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom: var(--spacing-6); border-radius:var(--rounded-md);">
           <div class="application-bar">
             <span class="application-name">My Application</span>
             <div class="navbar-spacer"></div>
@@ -3488,7 +3488,7 @@
       <div class="lib-section-body">
 
         <span class="lib-label">Light</span>
-        <div style="margin-bottom:var(--spacing-6); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
           <nav class="navbar navigation-bar navigation-bar-light">
             <div class="container-fluid">
               <div class="navbar-collapse">
@@ -3504,7 +3504,7 @@
         </div>
 
         <span class="lib-label">Light — with icons</span>
-        <div style="margin-bottom:var(--spacing-6); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
           <nav class="navbar navigation-bar navigation-bar-light">
             <div class="container-fluid">
               <div class="navbar-collapse">
@@ -3540,7 +3540,7 @@
         </div>
 
         <span class="lib-label">Secondary</span>
-        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md);">
           <nav class="navbar navigation-bar navigation-bar-secondary">
             <div class="container-fluid">
               <div class="navbar-collapse">
@@ -3556,7 +3556,7 @@
         </div>
 
         <span class="lib-label">Dark</span>
-        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md);">
           <nav class="navbar navigation-bar navigation-bar-dark">
             <div class="container-fluid">
               <div class="navbar-collapse">
@@ -3583,7 +3583,7 @@
       <div class="lib-section-body">
 
         <span class="lib-label">Default (filter + sort + view)</span>
-        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md);">
           <div class="management-bar management-bar-default">
             <div class="d-flex align-center gap-3 flex-1">
               <label class="form-check mb-0" style="margin:0;">
@@ -3616,7 +3616,7 @@
         </div>
 
         <span class="lib-label">Primary (items selected)</span>
-        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="margin-bottom:var(--spacing-6); border-radius:var(--rounded-md);">
           <div class="management-bar management-bar-primary">
             <label class="form-check" style="margin:0;">
               <input type="checkbox" class="form-check-input" checked style="margin:0; accent-color:white;">
@@ -3636,7 +3636,7 @@
         </div>
 
         <span class="lib-label">subnav-tbar (result count + active filters)</span>
-        <div style="border-radius:var(--rounded-md); overflow:hidden;">
+        <div style="border-radius:var(--rounded-md);">
           <div class="subnav-tbar">
             <span class="text-sm text-muted">24 results</span>
             <div class="d-flex align-center gap-2" style="margin-left:var(--spacing-4);">
@@ -3679,7 +3679,7 @@
         </div>
 
         <span class="lib-label">In breadcrumb-bar</span>
-        <div style="margin-bottom:var(--spacing-5); border-radius:var(--rounded-md); overflow:hidden; border:1px solid var(--color-light-d1);">
+        <div style="margin-bottom:var(--spacing-5); border-radius:var(--rounded-md); border:1px solid var(--color-light-d1);">
           <div class="breadcrumb-bar">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -3792,27 +3792,57 @@
     <div class="lib-section" id="tabs">
       <div class="lib-section-header">
         <h2>Tabs</h2>
-        <p>Default: <code>.nav.nav-tabs</code> · Button tabs: <code>.nav-tabs-button</code> · Justified: add <code>.nav-justified</code></p>
+        <p><code>.nav.nav-tabs</code> → <code>.nav-item</code> + <code>.nav-link</code> · Justified: <code>.nav-justified</code> · Pill/filter: <code>.nav-tabs-button</code></p>
       </div>
       <div class="lib-section-body">
 
-        <span class="lib-label">Default underline tabs</span>
+        <span class="lib-label">Default</span>
         <div style="margin-bottom:var(--spacing-7);">
-          <ul class="nav-tabs">
-            <li class="nav-item"><a href="#" class="nav-link active">Overview</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Details</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">History
-              <span class="badge badge-secondary" style="margin-left:4px">3</span></a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="active nav-link" href="#" role="tab" aria-selected="true">Fields</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" role="tab" aria-selected="false">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" role="tab" aria-selected="false">
+                History
+                <span class="badge badge-secondary" style="margin-left:var(--spacing-2)">3</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" role="tab" aria-disabled="true">Disabled</a>
+            </li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active">
-              <p class="text-muted text-sm">Tab content for <strong>Overview</strong>. The <code>.tab-pane.active</code> is shown; others are hidden.</p>
+            <div class="tab-pane active" role="tabpanel">
+              <p class="text-secondary text-sm">Content for <strong>Fields</strong> tab. Use <code>.tab-pane.active</code> to show a pane.</p>
             </div>
           </div>
         </div>
 
-        <span class="lib-label">Button tabs</span>
+        <span class="lib-label">Justified (equal-width)</span>
+        <div style="margin-bottom:var(--spacing-7);">
+          <ul class="nav nav-justified nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="active nav-link" href="#" role="tab">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" role="tab">Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" role="tab">Members</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel">
+              <p class="text-secondary text-sm">Content for <strong>Overview</strong> tab.</p>
+            </div>
+          </div>
+        </div>
+
+        <span class="lib-label">Button / Filter pills</span>
         <div style="margin-bottom:var(--spacing-7);">
           <ul class="nav-tabs-button">
             <li class="nav-item"><a href="#" class="nav-link active">All</a></li>
@@ -3821,13 +3851,6 @@
             <li class="nav-item"><a href="#" class="nav-link">Archived</a></li>
           </ul>
         </div>
-
-        <span class="lib-label">Justified (equal-width)</span>
-        <ul class="nav-tabs nav-justified">
-          <li class="nav-item"><a href="#" class="nav-link active">Tab One</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Tab Two</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Tab Three</a></li>
-        </ul>
 
       </div>
     </div>
@@ -4117,7 +4140,7 @@
 
           <!-- top-left -->
           <div>
-            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
               <span class="sticker sticker-sm sticker-primary sticker-rounded sticker-absolute sticker-top-left">
                 <svg class="lexicon-icon" aria-hidden="true"><use href="#document-pdf"></use></svg>
               </span>
@@ -4127,7 +4150,7 @@
 
           <!-- top-right -->
           <div>
-            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
               <span class="sticker sticker-sm sticker-danger sticker-rounded sticker-absolute sticker-top-right">
                 <svg class="lexicon-icon" aria-hidden="true"><use href="#star"></use></svg>
               </span>
@@ -4137,7 +4160,7 @@
 
           <!-- bottom-left -->
           <div>
-            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
               <span class="sticker sticker-sm sticker-success sticker-rounded sticker-absolute sticker-bottom-left">
                 <svg class="lexicon-icon" aria-hidden="true"><use href="#check"></use></svg>
               </span>
@@ -4147,7 +4170,7 @@
 
           <!-- bottom-right -->
           <div>
-            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md); overflow:hidden;">
+            <div style="position:relative; width:120px; height:80px; background:var(--color-light-l1); border:1px solid var(--color-light-d1); border-radius:var(--rounded-md);">
               <span class="sticker sticker-sm sticker-warning sticker-rounded sticker-absolute sticker-bottom-right">
                 <svg class="lexicon-icon" aria-hidden="true"><use href="#warning-full"></use></svg>
               </span>
