@@ -3160,3 +3160,182 @@ select.form-control {
 	left: var(--spacing-3);
 	z-index: 1;
 }
+
+/* ============================================================
+   VERTICAL NAV  (menubar-vertical / menubar-decorated)
+   Matches: https://storybook.clayui.com/?path=/story/design-system-components-verticalnav
+   ============================================================ */
+
+/* Wrapper — constrains width and adds right border */
+.vertical-nav {
+	background: var(--color-white);
+	border-right: 0.5px solid var(--color-secondary-l0);
+	display: flex;
+	flex-direction: column;
+	max-width: 320px;
+	min-height: 100%;
+	overflow-y: auto;
+	width: 100%;
+}
+
+/* Base menubar container */
+.menubar-vertical {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+/* Top-level nav list */
+.nav-nested-margins {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: var(--spacing-3) 0;
+}
+
+/* Each nav-item is a flex column so collapse content stacks below the link row */
+.menubar-vertical .nav-item {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+/* Base nav-link */
+.menubar-vertical .nav-link {
+	align-items: center;
+	color: var(--color-dark);
+	cursor: pointer;
+	display: flex;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-normal);
+	line-height: var(--line-height-base);
+	padding: var(--spacing-3) var(--spacing-8) var(--spacing-3) var(--spacing-5);
+	position: relative;
+	text-decoration: none;
+	transition: background-color 0.15s ease, color 0.15s ease;
+}
+.menubar-vertical .nav-link:hover {
+	background: var(--color-light);
+	color: var(--color-dark);
+	text-decoration: none;
+}
+.menubar-vertical .nav-link.active {
+	color: var(--color-primary);
+	font-weight: var(--font-weight-semi);
+}
+/* Decorated: filled highlight on active parent link */
+.menubar-decorated .nav-item > .nav-link.active {
+	background: var(--color-primary-l3);
+}
+
+/* nav-link-text — text node wrapper (enables truncation) */
+.nav-link-text {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Section label (non-interactive heading) */
+.menubar-vertical .nav-divider {
+	border-top: 1px solid var(--color-light-d1);
+	margin: var(--spacing-2) 0;
+}
+.menubar-vertical .nav-heading {
+	color: var(--color-secondary);
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.06em;
+	padding: var(--spacing-4) var(--spacing-5) var(--spacing-2);
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/* ── Collapse toggle button ── */
+.menubar-vertical .nav-btn.nav-btn-monospaced.collapse-icon {
+	background: none;
+	border: none;
+	border-radius: var(--rounded-md);
+	color: var(--color-secondary);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2rem;
+	padding: 0;
+	position: absolute;
+	right: var(--spacing-3);
+	top: var(--spacing-2);
+	transition: background-color 0.15s ease, color 0.15s ease;
+	width: 2rem;
+	z-index: 1;
+}
+.menubar-vertical .nav-btn.nav-btn-monospaced.collapse-icon:hover {
+	background: var(--color-light-d1);
+	color: var(--color-dark);
+}
+
+/* Collapse icon states — scoped inside vertical-nav to avoid side effects */
+.menubar-vertical .collapse-icon-open,
+.menubar-vertical .collapse-icon-closed {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.menubar-vertical .collapse-icon-open  { display: none; }
+.menubar-vertical .collapse-icon-closed { display: flex; }
+.menubar-vertical .nav-item.show > .nav-btn.collapse-icon .collapse-icon-open  { display: flex; }
+.menubar-vertical .nav-item.show > .nav-btn.collapse-icon .collapse-icon-closed { display: none; }
+
+/* ── Collapse container ── */
+.collapse { display: none; }
+.collapse.show { display: block; }
+
+/* ── Nested (stacked) nav ── */
+.menubar-vertical .nav-stacked {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	padding: var(--spacing-1) 0;
+}
+.menubar-vertical .nav-stacked .nav-item {
+	position: relative;
+}
+.menubar-vertical .nav-stacked .nav-link {
+	color: var(--color-secondary);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-normal);
+	padding: var(--spacing-2) var(--spacing-5) var(--spacing-2) var(--spacing-8);
+	padding-right: var(--spacing-8);
+}
+.menubar-vertical .nav-stacked .nav-link:hover {
+	background: var(--color-light);
+	color: var(--color-dark);
+}
+.menubar-vertical .nav-stacked .nav-link.active {
+	color: var(--color-primary);
+	font-weight: var(--font-weight-semi);
+}
+/* Bullet accent on active nested item */
+.menubar-decorated .nav-stacked .nav-link.active::before {
+	background: var(--color-primary);
+	border-radius: var(--rounded-full);
+	content: '';
+	height: 6px;
+	left: var(--spacing-6);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 6px;
+}
+
+/* Second-level nesting (nav-stacked inside nav-stacked) */
+.menubar-vertical .nav-stacked .nav-stacked .nav-link {
+	padding-left: calc(var(--spacing-8) + var(--spacing-5));
+}
+.menubar-decorated .nav-stacked .nav-stacked .nav-link.active::before {
+	left: calc(var(--spacing-8) + var(--spacing-2));
+}

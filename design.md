@@ -109,7 +109,8 @@ Pill shape: add `.btn-pill`.
 | App top bar | Application bar | `.application-bar .navbar` |
 | Dark site header | Navbar dark | `.navbar .navbar-dark` |
 | Secondary horizontal nav | Navigation bar | `.navigation-bar > .navbar > .navbar-collapse > .navbar-nav` |
-| Left sidebar | Nav menu | `.nav .nav-menu` |
+| Left sidebar (simple) | Nav menu | `.nav .nav-menu` |
+| Vertical tree nav (multi-level) | Vertical nav | `.vertical-nav > nav.menubar.menubar-vertical.menubar-decorated > ul.nav-nested-margins` |
 | Vertical stacked nav | Nav stacked | `.nav .nav-stacked` |
 | Breadcrumb trail | Breadcrumb | `.breadcrumb > .breadcrumb-item` |
 | List/asset pages | Management bar | `.management-bar .management-bar-default` |
