@@ -3237,7 +3237,7 @@ select.form-control {
 	color: var(--color-dark);
 }
 
-/* ── L1 nav-link ── */
+/* ── nav-link — all levels share the same height and left-line indicator ── */
 .menubar-vertical .nav-link {
 	align-items: center;
 	color: var(--color-dark);
@@ -3246,22 +3246,41 @@ select.form-control {
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-normal);
 	line-height: var(--line-height-base);
-	min-height: 2.75rem; /* 44px — consistent height for all L1 items */
+	min-height: 2.75rem; /* 44px — ALL levels */
 	padding: 0 var(--spacing-3) 0 var(--spacing-5);
+	position: relative;
 	text-decoration: none;
 	transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Left-line indicator via ::before — never affects layout */
+.menubar-vertical .nav-link::before {
+	border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+	bottom: 0;
+	content: '';
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 0;
+	transition: width 0.1s ease, background-color 0.1s ease;
 }
 .menubar-vertical .nav-link:hover {
 	background: var(--color-light);
 	color: var(--color-dark);
 	text-decoration: none;
 }
+.menubar-vertical .nav-link:hover::before {
+	background: var(--color-secondary-l0);
+	width: 2px;
+}
 .menubar-vertical .nav-link.active {
+	background: var(--color-primary-l3);
 	color: var(--color-primary);
 	font-weight: var(--font-weight-semi);
 }
-.menubar-decorated .nav-item > .nav-link.active {
-	background: var(--color-primary-l3);
+.menubar-vertical .nav-link.active::before {
+	background: var(--color-primary);
+	width: 4px;
 }
 
 /* nav-link-text — enables truncation */
@@ -3329,42 +3348,20 @@ select.form-control {
 }
 /* L2 items inherit the flex-block layout from .menubar-vertical .nav-item */
 
-/* L2 link style — compact, indented, muted color */
+/* L2 link — same height as L1, deeper left indent, muted color by default */
 .menubar-vertical .nav-stacked .nav-link {
 	color: var(--color-secondary);
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-normal);
-	min-height: 2rem; /* 32px — consistent height for all L2 items */
-	padding: 0 var(--spacing-3) 0 var(--spacing-8);
+	padding-left: var(--spacing-8); /* 32px indent */
 }
-.menubar-vertical .nav-stacked .nav-link:hover {
-	background: var(--color-light);
-	color: var(--color-dark);
-}
+/* Restore active color for L2+ (overrides the muted default above) */
 .menubar-vertical .nav-stacked .nav-link.active {
 	color: var(--color-primary);
-	font-weight: var(--font-weight-semi);
 }
-/* Bullet accent for active L2 */
-.menubar-decorated .nav-stacked .nav-link.active {
-	position: relative;
-}
-.menubar-decorated .nav-stacked .nav-link.active::before {
-	background: var(--color-primary);
-	border-radius: var(--rounded-full);
-	content: '';
-	height: 6px;
-	left: var(--spacing-5);
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 6px;
+.menubar-vertical .nav-stacked .nav-link:hover {
+	color: var(--color-dark);
 }
 
-/* ── L3 (nav-stacked inside nav-stacked) — deeper indent ── */
+/* L3 — even deeper indent */
 .menubar-vertical .nav-stacked .nav-stacked .nav-link {
-	padding-left: calc(var(--spacing-8) + var(--spacing-5));
-}
-.menubar-decorated .nav-stacked .nav-stacked .nav-link.active::before {
-	left: calc(var(--spacing-8) + var(--spacing-2));
+	padding-left: calc(var(--spacing-8) + var(--spacing-5)); /* 48px */
 }
