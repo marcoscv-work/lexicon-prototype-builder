@@ -3490,85 +3490,61 @@
         <div class="lib-row" style="align-items:flex-start; gap: var(--spacing-8);">
 
           <!-- Analytics Cloud nav (decorated, multi-level) -->
-          <div>
+          <div style="width:260px;">
             <span class="lib-label">Decorated — multi-level (Analytics Cloud)</span>
             <div class="vertical-nav" style="height:560px;">
               <nav class="menubar menubar-vertical menubar-decorated" aria-label="Analytics Cloud Navigation">
                 <ul class="nav nav-nested-margins">
 
-                  <!-- Simple item (no children) -->
+                  <!-- Simple item (no children) — nav-link is direct child -->
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Home</span>
-                    </a>
+                    <a class="nav-link" href="#"><span class="nav-link-text">Home</span></a>
                   </li>
 
-                  <!-- Sites — expanded, with active nested item -->
+                  <!-- Sites — expanded (L1 with children) -->
                   <li class="nav-item show">
-                    <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
-                      <span class="collapse-icon-open">
-                        <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg>
-                      </span>
-                      <span class="collapse-icon-closed">
-                        <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg>
-                      </span>
-                    </button>
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Sites</span>
-                    </a>
+                    <div class="nav-link-row">
+                      <a class="nav-link" href="#"><span class="nav-link-text">Sites</span></a>
+                      <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
+                        <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
+                        <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
+                      </button>
+                    </div>
                     <div class="collapse show">
                       <ul class="nav nav-stacked">
+
+                        <!-- L2 leaf -->
                         <li class="nav-item">
-                          <a class="nav-link" href="#">
-                            <span class="nav-link-text">Overview</span>
-                          </a>
+                          <a class="nav-link" href="#"><span class="nav-link-text">Overview</span></a>
                         </li>
-                        <!-- Audience sub-section — expanded -->
+
+                        <!-- Audience — L2 with children, expanded -->
                         <li class="nav-item show">
-                          <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
-                            <span class="collapse-icon-open">
-                              <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg>
-                            </span>
-                            <span class="collapse-icon-closed">
-                              <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg>
-                            </span>
-                          </button>
-                          <a class="nav-link" href="#">
-                            <span class="nav-link-text">Audience</span>
-                          </a>
+                          <div class="nav-link-row">
+                            <a class="nav-link" href="#"><span class="nav-link-text">Audience</span></a>
+                            <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
+                              <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
+                              <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
+                            </button>
+                          </div>
                           <div class="collapse show">
                             <ul class="nav nav-stacked">
-                              <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                  <span class="nav-link-text">Acquisition</span>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                  <span class="nav-link-text">Behavior</span>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                  <span class="nav-link-text">Geolocation</span>
-                                </a>
-                              </li>
+                              <li class="nav-item"><a class="nav-link active" href="#"><span class="nav-link-text">Acquisition</span></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">Behavior</span></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">Geolocation</span></a></li>
                             </ul>
                           </div>
                         </li>
-                        <!-- Assets sub-section — collapsed -->
+
+                        <!-- Assets — L2 with children, collapsed -->
                         <li class="nav-item">
-                          <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
-                            <span class="collapse-icon-open">
-                              <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg>
-                            </span>
-                            <span class="collapse-icon-closed">
-                              <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg>
-                            </span>
-                          </button>
-                          <a class="nav-link" href="#">
-                            <span class="nav-link-text">Assets</span>
-                          </a>
+                          <div class="nav-link-row">
+                            <a class="nav-link" href="#"><span class="nav-link-text">Assets</span></a>
+                            <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
+                              <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
+                              <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
+                            </button>
+                          </div>
                           <div class="collapse">
                             <ul class="nav nav-stacked">
                               <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">Pages</span></a></li>
@@ -3576,23 +3552,20 @@
                             </ul>
                           </div>
                         </li>
+
                       </ul>
                     </div>
                   </li>
 
-                  <!-- Segments — collapsed -->
+                  <!-- Segments — collapsed (L1 with children) -->
                   <li class="nav-item">
-                    <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
-                      <span class="collapse-icon-open">
-                        <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg>
-                      </span>
-                      <span class="collapse-icon-closed">
-                        <svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg>
-                      </span>
-                    </button>
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Segments</span>
-                    </a>
+                    <div class="nav-link-row">
+                      <a class="nav-link" href="#"><span class="nav-link-text">Segments</span></a>
+                      <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
+                        <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
+                        <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
+                      </button>
+                    </div>
                     <div class="collapse">
                       <ul class="nav nav-stacked">
                         <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">List</span></a></li>
@@ -3601,19 +3574,10 @@
                     </div>
                   </li>
 
-                  <!-- Divider + heading -->
                   <li class="nav-divider"></li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">People</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span class="nav-link-text">Commerce</span>
-                    </a>
-                  </li>
+                  <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">People</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">Commerce</span></a></li>
 
                 </ul>
               </nav>
@@ -3621,7 +3585,7 @@
           </div>
 
           <!-- Flat nav — icon + label items -->
-          <div>
+          <div style="width:240px;">
             <span class="lib-label">Flat — with icons &amp; section headings</span>
             <div class="vertical-nav" style="height:340px;">
               <nav class="menubar menubar-vertical menubar-decorated" aria-label="App Navigation">
