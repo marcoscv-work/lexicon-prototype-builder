@@ -3496,37 +3496,36 @@
               <nav class="menubar menubar-vertical menubar-decorated" aria-label="Analytics Cloud Navigation">
                 <ul class="nav nav-nested-margins">
 
-                  <!-- Simple item (no children) — nav-link is direct child -->
+                  <!-- Leaf item — no chevron -->
                   <li class="nav-item">
                     <a class="nav-link" href="#"><span class="nav-link-text">Home</span></a>
                   </li>
 
-                  <!-- Sites — expanded (L1 with children) -->
+                  <!-- Sites — expanded, chevron lives inside the nav-link -->
                   <li class="nav-item show">
-                    <div class="nav-link-row">
-                      <a class="nav-link" href="#"><span class="nav-link-text">Sites</span></a>
-                      <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Sites</span>
+                      <span class="collapse-icon">
                         <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
                         <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
-                      </button>
-                    </div>
+                      </span>
+                    </a>
                     <div class="collapse show">
                       <ul class="nav nav-stacked">
 
-                        <!-- L2 leaf -->
                         <li class="nav-item">
                           <a class="nav-link" href="#"><span class="nav-link-text">Overview</span></a>
                         </li>
 
                         <!-- Audience — L2 with children, expanded -->
                         <li class="nav-item show">
-                          <div class="nav-link-row">
-                            <a class="nav-link" href="#"><span class="nav-link-text">Audience</span></a>
-                            <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="true">
+                          <a class="nav-link" href="#">
+                            <span class="nav-link-text">Audience</span>
+                            <span class="collapse-icon">
                               <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
                               <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
-                            </button>
-                          </div>
+                            </span>
+                          </a>
                           <div class="collapse show">
                             <ul class="nav nav-stacked">
                               <li class="nav-item"><a class="nav-link active" href="#"><span class="nav-link-text">Acquisition</span></a></li>
@@ -3538,13 +3537,13 @@
 
                         <!-- Assets — L2 with children, collapsed -->
                         <li class="nav-item">
-                          <div class="nav-link-row">
-                            <a class="nav-link" href="#"><span class="nav-link-text">Assets</span></a>
-                            <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
+                          <a class="nav-link" href="#">
+                            <span class="nav-link-text">Assets</span>
+                            <span class="collapse-icon">
                               <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
                               <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
-                            </button>
-                          </div>
+                            </span>
+                          </a>
                           <div class="collapse">
                             <ul class="nav nav-stacked">
                               <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">Pages</span></a></li>
@@ -3557,15 +3556,15 @@
                     </div>
                   </li>
 
-                  <!-- Segments — collapsed (L1 with children) -->
+                  <!-- Segments — collapsed -->
                   <li class="nav-item">
-                    <div class="nav-link-row">
-                      <a class="nav-link" href="#"><span class="nav-link-text">Segments</span></a>
-                      <button type="button" class="btn btn-unstyled nav-btn nav-btn-monospaced collapse-icon" aria-expanded="false">
+                    <a class="nav-link" href="#">
+                      <span class="nav-link-text">Segments</span>
+                      <span class="collapse-icon">
                         <span class="collapse-icon-open"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-down"></use></svg></span>
                         <span class="collapse-icon-closed"><svg class="lexicon-icon lexicon-icon-sm" aria-hidden="true"><use href="#angle-right"></use></svg></span>
-                      </button>
-                    </div>
+                      </span>
+                    </a>
                     <div class="collapse">
                       <ul class="nav nav-stacked">
                         <li class="nav-item"><a class="nav-link" href="#"><span class="nav-link-text">List</span></a></li>

@@ -3195,46 +3195,23 @@ select.form-control {
 }
 
 /*
-   nav-item layout — flex row wrapper keeps button inline with its link:
-   ┌─ .nav-link-row (display:flex) ─────────────────────────────────────┐
-   │  a.nav-link (flex:1)                            │ btn (flex-shrink:0)│
-   └────────────────────────────────────────────────────────────────────┘
-   div.collapse  (full width, below)
-
-   Items WITHOUT children have no .nav-link-row — nav-link is direct child.
+   nav-item: simple block. The nav-link itself is a flex row that
+   contains the text + optional collapse-icon span at the end.
+   The .collapse content sits below as a normal block sibling.
 */
 .menubar-vertical .nav-item {
 	display: block;
 }
 
-/* Row wrapper: link + toggle button side-by-side */
-.menubar-vertical .nav-link-row {
-	align-items: stretch;
-	display: flex;
-}
-.menubar-vertical .nav-link-row > .nav-link {
-	flex: 1;
-	min-width: 0;
-}
-
-/* Collapse toggle button — static, in the flex row */
-.menubar-vertical .nav-link-row > .nav-btn.collapse-icon {
+/* Collapse icon — inside nav-link, pushed to the right by nav-link-text flex:1 */
+.menubar-vertical .nav-link > .collapse-icon {
 	align-items: center;
-	background: none;
-	border: none;
-	border-radius: var(--rounded-md);
 	color: var(--color-secondary);
-	cursor: pointer;
 	display: flex;
 	flex-shrink: 0;
 	justify-content: center;
-	padding: 0;
-	transition: background-color 0.15s ease, color 0.15s ease;
-	width: 2.25rem;
-}
-.menubar-vertical .nav-link-row > .nav-btn.collapse-icon:hover {
-	background: var(--color-light-d1);
-	color: var(--color-dark);
+	margin-left: auto;
+	width: 1.5rem;
 }
 
 /* ── nav-link — all levels share the same height and left-line indicator ── */
@@ -3307,7 +3284,7 @@ select.form-control {
 	white-space: nowrap;
 }
 
-/* Collapse icon open/closed states */
+/* Collapse icon open/closed states — icon is now inside nav-link */
 .menubar-vertical .collapse-icon-open,
 .menubar-vertical .collapse-icon-closed {
 	align-items: center;
@@ -3316,9 +3293,9 @@ select.form-control {
 }
 .menubar-vertical .collapse-icon-open  { display: none; }
 .menubar-vertical .collapse-icon-closed { display: flex; }
-/* .show on nav-item → button is inside .nav-link-row which is a child of nav-item */
-.menubar-vertical .nav-item.show .collapse-icon-open  { display: flex; }
-.menubar-vertical .nav-item.show .collapse-icon-closed { display: none; }
+/* Use > direct child so an expanded L1 doesn't hide the icon of a collapsed L2 inside it */
+.menubar-vertical .nav-item.show > .nav-link > .collapse-icon .collapse-icon-open  { display: flex; }
+.menubar-vertical .nav-item.show > .nav-link > .collapse-icon .collapse-icon-closed { display: none; }
 
 /* ── Collapse container ── */
 .collapse { display: none; }
