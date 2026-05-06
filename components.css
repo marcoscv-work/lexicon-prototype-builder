@@ -3203,15 +3203,16 @@ select.form-control {
 	display: block;
 }
 
-/* Collapse icon — inside nav-link, pushed to the right by nav-link-text flex:1 */
+/* Collapse icon — inside nav-link, pushed right by nav-link-text flex:1.
+   flex:0 0 1.5rem overrides the old global .collapse-icon{width:100%}
+   which would otherwise set flex-basis to 100% of the container. */
 .menubar-vertical .nav-link > .collapse-icon {
 	align-items: center;
 	color: var(--color-secondary);
 	display: flex;
-	flex-shrink: 0;
+	flex: 0 0 1.5rem;
+	height: 1.5rem;
 	justify-content: center;
-	margin-left: auto;
-	width: 1.5rem;
 }
 
 /* ── nav-link — all levels share the same height and left-line indicator ── */
